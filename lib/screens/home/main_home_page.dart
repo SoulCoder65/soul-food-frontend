@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/screens/home/main_page_body.dart';
 import 'package:food_delivery/widgets/big_text.dart';
 import 'package:food_delivery/widgets/small_text.dart';
 
-import '../../utils/colors.dart';
 import '../../utils/colors.dart';
 
 class MainHomePage extends StatefulWidget {
@@ -26,6 +26,7 @@ class _MainHomePageState extends State<MainHomePage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       BigText(text: "India",color: AppColors.mainColor,),
                       Row(
@@ -49,7 +50,8 @@ class _MainHomePageState extends State<MainHomePage> {
                 ],
               ),
             ),
-          )
+          ),
+          MainPageBody(),
         ],
       ),
     );
