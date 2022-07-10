@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/screens/home/main_page_body.dart';
+import 'package:food_delivery/utils/dimensions.dart';
 import 'package:food_delivery/widgets/big_text.dart';
 import 'package:food_delivery/widgets/small_text.dart';
 
@@ -20,8 +21,8 @@ class _MainHomePageState extends State<MainHomePage> {
         children: [
           Container(
             child: Container(
-              padding: const EdgeInsets.only(left: 20,right: 20),
-              margin: const EdgeInsets.only(top: 45,bottom: 15),
+              padding: EdgeInsets.only(left: Dimensions.width20,right: Dimensions.width20),
+              margin:  EdgeInsets.only(top: Dimensions.height45,bottom: Dimensions.height15),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -45,13 +46,15 @@ class _MainHomePageState extends State<MainHomePage> {
                       borderRadius: BorderRadius.circular(15),
                       color: AppColors.mainColor,
                     ),
-                    child: Icon(Icons.search,color: Colors.white,),
+                    child:  Icon(Icons.search,color: Colors.white,size: Dimensions.icon24),
                   )
                 ],
               ),
             ),
           ),
-          MainPageBody(),
+          Expanded(child: SingleChildScrollView(
+            child: MainPageBody(),
+          )),
         ],
       ),
     );
