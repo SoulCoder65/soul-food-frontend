@@ -4,6 +4,7 @@ import 'package:food_delivery/utils/colors.dart';
 import 'package:food_delivery/utils/dimensions.dart';
 import 'package:food_delivery/widgets/big_text.dart';
 import 'package:food_delivery/widgets/icon_and_text_widget.dart';
+import 'package:food_delivery/widgets/rating_and_details.dart';
 import 'package:food_delivery/widgets/small_text.dart';
 
 //Packages
@@ -159,7 +160,7 @@ class _MainPageBodyState extends State<MainPageBody> {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(Dimensions.radius20),
                   color: Colors.white,
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                         color: Color(0xFFe8e8e8),
                         blurRadius: 5.0,
@@ -172,58 +173,7 @@ class _MainPageBodyState extends State<MainPageBody> {
                     left: Dimensions.width15,
                     right: Dimensions.width15,
                     top: Dimensions.height15),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    BigText(text: "Food Title"),
-                    SizedBox(
-                      height: Dimensions.height10,
-                    ),
-                    Row(
-                      children: [
-                        Wrap(
-                          children: List.generate(
-                              5,
-                              (index) => Icon(
-                                    Icons.star,
-                                    size: 15,
-                                    color: AppColors.mainColor,
-                                  )),
-                        ),
-                        SizedBox(
-                          width: Dimensions.height10,
-                        ),
-                        SmallText(text: "4.5"),
-                        SizedBox(
-                          width: Dimensions.width10,
-                        ),
-                        SmallText(text: "1287"),
-                        SizedBox(width: 5),
-                        SmallText(text: "comments")
-                      ],
-                    ),
-                    SizedBox(
-                      height: Dimensions.height20,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        IconAndTextWidget(
-                            icon: Icons.circle,
-                            text: "Normal",
-                            iconColor: AppColors.iconColor1),
-                        IconAndTextWidget(
-                            icon: Icons.location_on,
-                            text: "2.3km",
-                            iconColor: AppColors.mainColor),
-                        IconAndTextWidget(
-                            icon: Icons.access_time_rounded,
-                            text: "30min",
-                            iconColor: AppColors.iconColor2)
-                      ],
-                    )
-                  ],
-                ),
+                child: RatingAndDetails(name: "Food Title"),
               ),
             ),
           )
