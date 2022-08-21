@@ -3,7 +3,10 @@ import 'package:food_delivery/screens/food_section/popular_food_detail.dart';
 import 'package:food_delivery/screens/food_section/recommended_foo_detail.dart';
 import 'package:food_delivery/screens/home/main_home_page.dart';
 import 'package:get/get.dart';
-void main() {
+import 'helpers/dependencies.dart' as dep;
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await dep.init();
   runApp(const MyApp());
 }
 
